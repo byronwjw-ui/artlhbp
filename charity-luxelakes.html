@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>《童年的回信》Letters Home from Childhood · 麓湖儿童中心联合项目方案书</title>
+<style>
+  :root{
+    --ink:#0A2F44;
+    --gold:#C9A03D;
+    --jade:#1A7F62;
+    --paper:#F5EFE0;
+    --paper-2:#FBF7EC;
+    --line:#D9CDB0;
+    --muted:#5B6B76;
+    --shadow:0 1px 0 rgba(10,47,68,.06), 0 8px 28px rgba(10,47,68,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter","Helvetica Neue",Roboto,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:15.5px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:Georgia,"Source Han Serif SC","Source Han Serif","Noto Serif CJK SC","Songti SC",serif;}
+  /* paper texture via gradients */
+  body{
+    background:
+      radial-gradient(1200px 600px at 10% -5%, #FBF7EC 0%, transparent 60%),
+      radial-gradient(1000px 500px at 110% 5%, #EFE6CE 0%, transparent 55%),
+      var(--paper);
+  }
+  .page{
+    max-width:1080px;margin:0 auto;padding:72px 64px;
+    background:var(--paper-2);
+    border-left:1px solid var(--line);border-right:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  /* top ribbon */
+  .ribbon{
+    height:6px;background:linear-gradient(90deg,var(--ink) 0 35%, var(--gold) 35% 65%, var(--jade) 65% 100%);
+  }
+  /* section */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:none}
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+    font-weight:600;margin-bottom:14px;
+  }
+  .kicker .num{
+    display:inline-block;min-width:34px;padding:2px 8px;border:1px solid var(--gold);
+    color:var(--gold);font-weight:700;letter-spacing:.1em;
+  }
+  h1,h2,h3,h4{font-family:Georgia,"Source Han Serif SC",serif;color:var(--ink);font-weight:700;letter-spacing:.01em}
+  h1{font-size:44px;line-height:1.18;margin:0 0 8px}
+  h2{font-size:30px;line-height:1.25;margin:0 0 18px}
+  h3{font-size:20px;margin:24px 0 10px}
+  h4{font-size:16px;margin:18px 0 6px;letter-spacing:.04em}
+  p{margin:0 0 14px;color:#1c3a4d}
+  .muted{color:var(--muted)}
+  .lede{font-size:17px;line-height:1.85}
+  .rule{height:1px;background:var(--line);margin:28px 0}
+  .gold-rule{height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:8px 0 20px}
+  /* cover */
+  .cover{padding:96px 64px 72px;background:
+    linear-gradient(180deg, #0A2F44 0%, #0E3A52 100%);color:#F5EFE0;border-bottom:none;
+  }
+  .cover .ribbon-mini{display:flex;gap:8px;margin-bottom:28px}
+  .cover .ribbon-mini span{display:inline-block;width:54px;height:3px;background:var(--gold)}
+  .cover .ribbon-mini span:nth-child(2){background:var(--jade)}
+  .cover .ribbon-mini span:nth-child(3){background:#F5EFE0;opacity:.55}
+  .cover h1{color:#F5EFE0;font-size:52px;line-height:1.12}
+  .cover .en{color:var(--gold);font-style:italic;font-size:22px;margin-top:10px;letter-spacing:.04em}
+  .cover .sub{margin-top:28px;font-size:18px;color:#E9DFC6;max-width:720px}
+  .cover .meta{
+    margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 32px;
+    border-top:1px solid rgba(245,239,224,.25);padding-top:24px;font-size:14.5px;color:#E9DFC6;
+  }
+  .cover .meta b{color:#F5EFE0;font-weight:600;display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .cover .stamp{
+    margin-top:36px;display:inline-block;border:1.5px solid var(--gold);color:var(--gold);
+    padding:10px 18px;letter-spacing:.3em;font-size:12px;font-weight:600;
+  }
+  /* cards */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .card{
+    background:#FFFDF6;border:1px solid var(--line);padding:22px 22px;border-radius:2px;
+  }
+  .card.dark{background:var(--ink);color:#F5EFE0;border-color:var(--ink)}
+  .card.dark p, .card.dark .muted{color:#D6CDB6}
+  .data-card{
+    background:#FFFDF6;border:1px solid var(--line);border-top:3px solid var(--gold);
+    padding:22px 22px 20px;
+  }
+  .data-card .label{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .data-card .num{font-family:Georgia,serif;font-weight:700;font-size:34px;line-height:1.1;color:var(--ink);margin:8px 0 4px}
+  .data-card .unit{font-size:13px;color:var(--muted)}
+  /* gold-bordered emphasis box */
+  .decision{
+    border:2px solid var(--gold);background:#FFFCEF;padding:22px 26px;margin:22px 0;
+    position:relative;
+  }
+  .decision:before{
+    content:"决策点";position:absolute;top:-11px;left:18px;background:var(--gold);color:#fff;
+    font-size:11px;letter-spacing:.24em;padding:2px 10px;font-weight:700;
+  }
+  .decision.en:before{content:"DECISION POINT"}
+  /* tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0;background:#FFFDF6;border:1px solid var(--line);font-size:14.5px}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  th{background:#F1E7CC;color:var(--ink);font-weight:700;font-size:13px;letter-spacing:.04em}
+  tr:last-child td{border-bottom:none}
+  /* lists */
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+  ol.steps li{counter-increment:s;position:relative;padding:10px 12px 10px 56px;border-bottom:1px dashed var(--line)}
+  ol.steps li:before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:10px;width:42px;text-align:center;
+    font-family:Georgia,serif;color:var(--gold);font-weight:700;font-size:18px;
+    border-right:1px solid var(--line);padding-right:10px;
+  }
+  ul.tight{margin:8px 0 14px;padding-left:20px}
+  ul.tight li{margin:4px 0}
+  /* dual columns (麓湖 vs 我方) */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:#FFFDF6}
+  .duo > div{padding:22px 22px}
+  .duo > div + div{border-left:1px solid var(--line)}
+  .duo .head{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#fff;
+    background:var(--ink);padding:10px 22px;font-weight:700;
+  }
+  .duo .head.gold{background:var(--gold);color:#1c1408}
+  .duo .row{display:grid;grid-template-columns:1fr 1fr}
+  .duo .row > div{padding:14px 22px;border-top:1px solid var(--line);min-height:74px}
+  .duo .row > div + div{border-left:1px solid var(--line)}
+  .duo .row .tag{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
+  /* signature card */
+  .sig{
+    border:1px solid var(--line);background:#FFFDF6;padding:24px 26px;border-left:4px solid var(--ink);
+  }
+  .sig.gold{border-left-color:var(--gold)}
+  .sig.jade{border-left-color:var(--jade)}
+  .sig h3{margin-top:0}
+  .badge{
+    display:inline-block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    background:#EFE6CE;color:#5d4815;padding:3px 10px;margin:0 6px 6px 0;font-weight:600;border-radius:1px;
+  }
+  .badge.ink{background:var(--ink);color:#F5EFE0}
+  .badge.jade{background:#DBEFE5;color:#0f4f3c}
+  /* flow diagram */
+  .flow{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);
+    background:#FFFDF6;margin:14px 0;
+  }
+  .flow > div{padding:18px 16px;border-right:1px solid var(--line);position:relative}
+  .flow > div:last-child{border-right:none}
+  .flow .step-label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+  .flow .step-name{font-family:Georgia,serif;font-weight:700;font-size:16px;color:var(--ink);margin-bottom:4px}
+  .flow .step-note{font-size:12.5px;color:var(--muted);line-height:1.55}
+  .flow > div + div:before{
+    content:"▶";position:absolute;left:-9px;top:50%;transform:translateY(-50%);
+    color:var(--gold);background:var(--paper-2);font-size:12px;padding:2px;
+  }
+  /* timeline */
+  .tl{position:relative;margin:18px 0 4px;padding-left:0}
+  .tl-row{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--line)}
+  .tl-row:first-child{border-top:none}
+  .tl-date{font-family:Georgia,serif;font-size:18px;font-weight:700;color:var(--gold)}
+  .tl-date small{display:block;font-family:Inter,sans-serif;font-size:11px;color:var(--muted);letter-spacing:.18em;font-weight:600;margin-top:4px}
+  .tl-body h4{margin:0 0 4px}
+  .tl-body p{margin:0 0 4px;font-size:14px}
+  /* risk */
+  .risk{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .risk-card{border:1px solid var(--line);background:#FFFDF6;padding:16px 18px;border-top:3px solid var(--jade)}
+  .risk-card h4{margin:0 0 4px;color:var(--ink);font-size:15.5px}
+  .risk-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade);font-weight:700;margin-bottom:6px}
+  .risk-card p{font-size:13.5px;margin:0;color:#22455a}
+  /* footnote / pull quote */
+  .pull{
+    border-left:3px solid var(--gold);background:#FFFCEF;padding:18px 22px;margin:18px 0;
+    font-family:Georgia,"Source Han Serif SC",serif;font-size:18px;line-height:1.7;color:#3a2e0e;
+  }
+  .pull .en{display:block;font-style:italic;color:var(--muted);font-size:14px;margin-top:6px}
+  /* footer */
+  footer{
+    background:var(--ink);color:#D6CDB6;padding:36px 64px;
+  }
+  footer .row{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+  footer h4{color:var(--gold);font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 8px}
+  footer p{color:#C7BC9E;font-size:13px;margin:0 0 6px}
+  /* utilities */
+  .center{text-align:center}
+  .small{font-size:13px}
+  .mt-0{margin-top:0}
+  .mb-0{margin-bottom:0}
+  .nowrap{white-space:nowrap}
+  .toc{
+    border:1px solid var(--line);background:#FFFDF6;padding:22px 26px;display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;
+  }
+  .toc a{color:var(--ink);text-decoration:none;display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:7px 0;font-size:14px}
+  .toc a:hover{color:var(--gold)}
+  .toc a span:first-child{font-family:Georgia,serif}
+  .toc a .n{color:var(--gold);font-weight:700;font-family:Georgia,serif;letter-spacing:.06em}
+  /* print */
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;border:none;padding:32px}
+    section{page-break-inside:avoid}
+    .cover{page-break-after:always}
+  }
+  @media (max-width:860px){
+    .page{padding:40px 22px}
+    .cover{padding:64px 22px 48px}
+    .cover h1{font-size:36px}
+    h1{font-size:32px}h2{font-size:24px}
+    .grid-3,.grid-2,.grid-4,.duo,.duo .row,.flow,.risk,footer .row,.toc{grid-template-columns:1fr}
+    .duo > div + div, .duo .row > div + div{border-left:none;border-top:1px solid var(--line)}
+    .flow > div{border-right:none;border-bottom:1px solid var(--line)}
+    .flow > div + div:before{display:none}
+    .tl-row{grid-template-columns:1fr}
+    .cover .meta{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="ribbon"></div>
+
+<!-- ============= 01 · 封面 ============= -->
+<div class="page cover">
+  <div class="ribbon-mini"><span></span><span></span><span></span></div>
+  <div class="kicker" style="color:var(--gold)"><span class="num" style="color:var(--gold);border-color:var(--gold)">01</span> 项目合作方案书 · CONFIDENTIAL DRAFT</div>
+  <h1 class="serif">《童年的回信》</h1>
+  <div class="en serif">Letters Home from Childhood</div>
+  <p class="sub serif">山区儿童艺术公益 × 麓湖儿童中心义卖联合项目方案书<br/>
+    <span style="opacity:.8;font-style:italic">A Three-Year IP Co-Build Proposal for Luxelakes Children's Centre</span></p>
+
+  <div class="meta">
+    <div><b>提交方 / Submitted by</b>B.W（项目负责人 · 第一签字方）<br/>R.W（共同发起人 · 第二签字方）</div>
+    <div><b>出资 / 执行 / 兜底主体</b>四川天府中碳环保科技有限公司<br/>（集团内地碳汇事业部唯一总部级载体）</div>
+    <div><b>接收方 / Submitted to</b>成都麓湖生态城开发方（万华投资集团）<br/>麓湖儿童中心 / A4 美术馆 / 麓湖社区基金会</div>
+    <div><b>提交时间 / Date</b>2026 年 5 月<br/>建议决策窗口：2026 年 6 月底前</div>
+  </div>
+
+  <div class="stamp">CO-BRANDED · LONG-TERM · AUDITABLE</div>
+</div>
+
+<!-- ============= 主体 ============= -->
+<div class="page">
+
+  <!-- 目录 -->
+  <section style="padding-top:36px">
+    <div class="kicker"><span class="num">目录</span> CONTENTS</div>
+    <h2 class="serif">本方案书 · 全 12 章</h2>
+    <div class="gold-rule"></div>
+    <div class="toc">
+      <a href="#s02"><span><span class="n">02 ·</span> 一页纸执行摘要</span><span class="muted">EXECUTIVE SUMMARY</span></a>
+      <a href="#s03"><span><span class="n">03 ·</span> 项目背景与情感锚点</span><span class="muted">CONTEXT</span></a>
+      <a href="#s04"><span><span class="n">04 ·</span> 发起方机构信用页</span><span class="muted">CREDENTIALS</span></a>
+      <a href="#s05"><span><span class="n">05 ·</span> 项目核心:《童年的回信》</span><span class="muted">CORE PROGRAMME</span></a>
+      <a href="#s06"><span><span class="n">06 ·</span> 双方资源对照表</span><span class="muted">PARITY OF CONTRIBUTION</span></a>
+      <a href="#s07"><span><span class="n">07 ·</span> 资金流向与合规</span><span class="muted">FUND FLOW &amp; COMPLIANCE</span></a>
+      <a href="#s08"><span><span class="n">08 ·</span> 风险对沖与撤出条款</span><span class="muted">RISK &amp; EXIT</span></a>
+      <a href="#s09"><span><span class="n">09 ·</span> 三年六期滚动路线图</span><span class="muted">3-YR ROADMAP</span></a>
+      <a href="#s10"><span><span class="n">10 ·</span> 长期 IP 联名资产</span><span class="muted">CO-OWNED IP</span></a>
+      <a href="#s11"><span><span class="n">11 ·</span> 媒体与传播口径</span><span class="muted">PR PROTOCOL</span></a>
+      <a href="#s12"><span><span class="n">12 ·</span> 决策提示与下一步</span><span class="muted">NEXT STEP</span></a>
+      <a href="#sig"><span><span class="n">附 ·</span> 签署页 / 联系方式</span><span class="muted">SIGNATURE</span></a>
+    </div>
+  </section>
+
+  <!-- ============= 02 · 执行摘要 ============= -->
+  <section id="s02">
+    <div class="kicker"><span class="num">02</span> Executive Summary · 一页纸执行摘要</div>
+    <h2 class="serif">一页纸读懂《童年的回信》</h2>
+    <div class="gold-rule"></div>
+
+    <div class="grid-3">
+      <div class="data-card">
+        <div class="label">项目周期 / DURATION</div>
+        <div class="num">3 年 · 6 期</div>
+        <div class="unit">每年 7 月暑期场 + 1 月寒假场，各驻扎 2 周</div>
+      </div>
+      <div class="data-card">
+        <div class="label">单期规模 / PER WAVE</div>
+        <div class="num">30–50 名 / 120–250 幅</div>
+        <div class="unit">山区 6–14 岁儿童深度参与 2 周，每孩 4–5 幅成熟作品</div>
+      </div>
+      <div class="data-card">
+        <div class="label">三年累计 / 3-YR CUMULATIVE</div>
+        <div class="num">180–300 户</div>
+        <div class="unit">直接受教儿童 / 直接增收家庭 / 720–1,500 幅画作 IP</div>
+      </div>
+    </div>
+
+    <h3>本项目六行总结</h3>
+    <p class="lede">
+      《童年的回信》是一项由四川天府中碳环保科技有限公司全额出资、由 B.W 与 R.W 姐弟共同发起的<b>持续性运营公益项目</b>。
+      项目每年在四川山区驻扎两期、每期 2 周，由专业美术老师团队为 30–50 名 6–14 岁儿童提供艺术陪伴与创作引导，并将其作品郑重押运至成都麓湖儿童中心举办公益义卖展。
+      画作单幅定价 10–100 元，由热心公益群体全部购藏，<b>款项 100% 反哺对应贫困家庭</b>。
+      姐弟与团队全程不收取任何费用；媒体口径由专业 PR 统一管理。
+      本方案不寻求一次性活动赞助，而是寻求与麓湖儿童中心 / A4 美术馆建立<b>三年六期、可联合署名、可沉淀 IP</b> 的机构级合作。
+      所有资金、合规、媒体、风险与撤出条款，均由四川天府中碳作为单一兜底主体承担。
+    </p>
+
+    <div class="decision">
+      <h3 class="mt-0">麓湖品牌价值核心主张 · One-Line Pitch</h3>
+      <p class="serif" style="font-size:18.5px;margin:0;color:#3a2e0e">
+        本项目把麓湖儿童中心既有的「儿童艺术 × 公共文化 × 社区公益」三角资产，
+        从社区半径延展至四川山区，形成一个可被国内外艺术圈与主流媒体长期引用的、
+        与麓湖品牌调性高度一致的<b>儿童艺术公益联合 IP</b>——而非一次性活动。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= 03 · 背景与情感锚点 ============= -->
+  <section id="s03">
+    <div class="kicker"><span class="num">03</span> Context · 项目背景与情感锚点</div>
+    <h2 class="serif">为什么是「画」,为什么是「麓湖」</h2>
+    <div class="gold-rule"></div>
+
+    <div class="grid-2">
+      <div>
+        <h3>家族与四川的真实联结</h3>
+        <p>
+          项目共同发起人 R.W 出生于 2010 年 1 月,香港籍,出生后 0–5 岁(2010–2015)在四川生活,
+          其后转赴香港、美国加州求学。项目负责人 B.W 自香港集团总部主理内地碳汇事业部,
+          常驻香港-成都两地。
+        </p>
+        <p>
+          这条家族半径——香港 → 四川 → 美国 → 再次回到四川——构成了本项目的内在叙事:
+          <b>一个真正离开过的人,以专业身份回来,做一件本地的、长线的、不带走的事。</b>
+          我们不把它包装成情怀,而是把它作为本项目「为什么必须落在四川」的事实依据。
+        </p>
+      </div>
+      <div>
+        <h3>为什么是孩子的画</h3>
+        <p>
+          小孩子的画,大人模仿不了。童真、率性、未被规训的观看方式,本身就是当代视觉文化中
+          最稀缺的内容资产。本项目<b>不修改、不「提升」、不代笔、不二次创作</b>,
+          只把孩子的原作郑重接到桌前。
+        </p>
+        <p>
+          这一立场决定了本项目与麓湖儿童中心 / A4 美术馆的天然对位——三方共同认同的,
+          是「儿童作为创作者本身的尊严」,而不是把孩子作为受助者的图像化呈现。
+        </p>
+      </div>
+    </div>
+
+    <h3>为什么是麓湖</h3>
+    <p>
+      在国内开发方语境中,麓湖生态城(万华投资集团)是<b>极少数把儿童艺术教育、公共文化空间与社区公益打通的样本</b>。
+      A4 美术馆的当代艺术策展能力、麓湖儿童中心的儿童艺术空间运营经验、麓湖社区基金会的合规通道,
+      共同构成了本项目落地所需的<b>专业接收端</b>。
+    </p>
+    <p>
+      换言之,本项目并非「寻找一个有调性的场地」,而是「寻找一个调性、专业能力、合规身份与我们对位的合作方」。
+      在我们尽调的国内开发方样本中,麓湖是首选,且不是唯一选择中较好的一个,而是<b>真正与本项目目标函数一致的少数选项之一</b>。
+    </p>
+
+    <div class="pull">
+      「每一幅孩子的画,都是一封寄给家乡与童年的回信。<br/>由姐弟在成都麓湖,把它郑重地接住。」
+      <span class="en">Every child's painting is a letter sent home — to a childhood, to a place. We catch it, with care, at Luxelakes.</span>
+    </div>
+  </section>
+
+  <!-- ============= 04 · 发起方机构信用页 ============= -->
+  <section id="s04">
+    <div class="kicker"><span class="num">04</span> Credentials · 发起方机构信用页</div>
+    <h2 class="serif">三层信用结构 · 可追溯、可背书、可持续</h2>
+    <div class="gold-rule"></div>
+    <p class="muted">本项目的合规与履约能力,由以下三块独立但互相印证的信用凭证支撑。三者构成本项目对麓湖品牌的「机构级背书」基础。</p>
+
+    <div class="grid-2">
+      <div class="sig">
+        <span class="badge ink">第一签字方 · 项目负责人</span>
+        <h3 class="mt-0">B.W <span class="muted serif" style="font-size:14px">/ 姐姐</span></h3>
+        <p class="muted small">30 岁 · 香港籍 · 8 年海外留学经历</p>
+        <ul class="tight">
+          <li><b>香港中盈顶耀新能源投资集团</b> · 董事长</li>
+          <li><b>香港青年内地就业创业联合会</b> · 会长<br/>
+              <span class="muted small">2019 年于中联办指导下成立 · 非营利机构</span></li>
+          <li><b>四川天府中碳环保科技有限公司</b> · 集团内地碳汇事业部唯一总部级载体(由 B.W 实际主理)</li>
+          <li><b>RBW Studio</b>(rbwmeta.com) · 联合创始人 · 中文文化端 · 紫微斗数 / 小六壬研习</li>
+        </ul>
+        <p class="small muted">B.W 在本项目中的双重身份意义:<br/>
+          ① 集团董事长 → 出资与执行能力背书;<br/>
+          ② 联合会会长 → 既有公益履历与合规经验背书。</p>
+      </div>
+      <div class="sig gold">
+        <span class="badge">第二签字方 · 共同发起人</span>
+        <h3 class="mt-0">R.W <span class="muted serif" style="font-size:14px">/ 弟弟</span></h3>
+        <p class="muted small">16 岁 · 2010 年 1 月生于香港 · 0–5 岁在四川生活</p>
+        <ul class="tight">
+          <li>香港 → 美国加州在读高中(2019 至今)</li>
+          <li><b>RBW Studio</b> · 联合创始人 · 技术 + 西方文化端 · 塔罗研习</li>
+          <li>本项目角色:青年共同发起人 / 现场参与者 / 双语内容产出</li>
+        </ul>
+        <p class="small muted">
+          说明:R.W 在公开材料中统一以「项目共同发起人 / B.W 的弟弟 / R.W」指代,
+          不使用真名。<b>R.W 是合作者与共同发起人,不是受益人。</b>
+          其角色定位由方案签署时双方共同确认。
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:22px;border-top:3px solid var(--jade)">
+      <span class="badge jade">出资 / 执行 / 兜底主体</span>
+      <h3 class="mt-0">四川天府中碳环保科技有限公司</h3>
+      <p>
+        作为香港中盈顶耀新能源投资集团内地碳汇事业部唯一总部级载体,四川天府中碳具备:
+      </p>
+      <ul class="tight">
+        <li>注册于四川省的合规企业主体,具备完整的财务、税务、审计接口;</li>
+        <li>由集团总部直接核算,资金来源单一可追溯,不涉及对外募款;</li>
+        <li>依托集团 ESG / 碳汇业务体系,具备长期 CSR 项目运营经验;</li>
+        <li>承担本项目<b>全部出资、现场执行、合规审查与兜底责任</b>——单一主体,边界清晰。</li>
+      </ul>
+      <p class="small muted mb-0">
+        集团其他产业板块(新能源投资、碳汇资产、数字文化 RBW Studio 等)在本方案中仅作为信用佐证,不在本项目业务范围内,亦不要求麓湖方就此承担任何信息处理义务。
+      </p>
+    </div>
+
+    <div class="decision">
+      <p class="mt-0 mb-0">
+        <b>对麓湖方意味着:</b>本项目不存在「个人发起 → 临时筹款 → 找场地」的常见公益三段式风险。
+        从签约到执行到关账,全部由一个有实体、有税号、有审计链条的企业主体承担——
+        <b>麓湖方只需要把品牌价值借出来,不需要为资金、合规、税务、媒体责任承担任何兜底。</b>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= 05 · 项目核心 ============= -->
+  <section id="s05">
+    <div class="kicker"><span class="num">05</span> Core Programme · 项目核心</div>
+    <h2 class="serif">《童年的回信》Letters Home from Childhood</h2>
+    <div class="gold-rule"></div>
+
+    <div class="grid-2">
+      <div>
+        <h3>项目名释义</h3>
+        <p>
+          中文名:《童年的回信》<br/>
+          英文名:Letters Home from Childhood
+        </p>
+        <p>
+          每一幅孩子的画都是一封寄给家乡与童年的回信。寄出的人是孩子,接住的人是
+          姐弟与麓湖。我们不打开它、不修改它、不替它说话——只让它在麓湖的展墙上,
+          被一个第三方的、温柔的、专业的目光接住。
+        </p>
+      </div>
+      <div>
+        <h3>项目性质</h3>
+        <p>
+          <b>持续性运营公益项目,非一次性活动。</b><br/>
+          每年 2 期:7 月暑期场 + 1 月寒假场,各驻扎 2 周。<br/>
+          2026 年 7 月为首期。计划至少滚动三年,共 6 期。
+        </p>
+        <p class="muted small">
+          本项目自首期起即按「IP 共建」节奏设计——每一期都为下一期、为画册、为纪录短片、为衍生读本积累资产。
+        </p>
+      </div>
+    </div>
+
+    <h3>单期执行模式 · 10 步</h3>
+    <ol class="steps">
+      <li>姐弟 + 邀请的专业高水准美术老师团队(3–5 人)进入四川山区贫困地区,连续驻扎 2 周。</li>
+      <li>每天利用孩子们的空余时间教画。<b>尊重课业节奏,不打扰日常生活。</b></li>
+      <li>每期覆盖 30–50 名 6–14 岁山区儿童,每人深度参与两周创作。</li>
+      <li>单期产出 120–250 幅有效画作(每孩 4–5 幅完成度成熟作品)。</li>
+      <li>画作整理 / 装裱 / 押运至成都麓湖儿童中心(或 A4 美术馆联合空间,以双方对接确认为准)。</li>
+      <li>在麓湖儿童中心举办公益义卖展,联合署名,统一策展。</li>
+      <li>每幅画依尺寸 / 用纸 / 完成度,定价 10–100 元。</li>
+      <li>组织热心公益群体在展期内全部买下,形成清晰的「艺术义卖闭环」。</li>
+      <li>款项 <b>100% 反哺对应贫困家庭</b>,经四川天府中碳财务通道发放,可审计、可追溯。</li>
+      <li>姐弟与团队全程不收取任何费用。媒体曝光由专业 PR 统一口径,品牌共有。</li>
+    </ol>
+
+    <h3>单期影响测算(保守口径)</h3>
+    <div class="grid-4">
+      <div class="data-card"><div class="label">直接受教</div><div class="num">30–50</div><div class="unit">名 山区儿童</div></div>
+      <div class="data-card"><div class="label">直接增收</div><div class="num">30–50</div><div class="unit">户 贫困家庭</div></div>
+      <div class="data-card"><div class="label">画作产出</div><div class="num">120–250</div><div class="unit">幅 有效作品</div></div>
+      <div class="data-card"><div class="label">单期义卖总额</div><div class="num">¥1.2k–25k</div><div class="unit">全额反哺</div></div>
+    </div>
+    <p class="small muted">三年累计(6 期):180–300 名儿童 / 180–300 户家庭 / 720–1,500 幅画作 / 累计义卖额 ¥7,200–¥150,000(全额反哺)。注:义卖款项规模刻意保持小而清晰,以确保 100% 直达可追溯,而非追求账面数字。</p>
+  </section>
+
+  <!-- ============= 06 · 双方资源对照表 ============= -->
+  <section id="s06">
+    <div class="kicker"><span class="num">06</span> Parity · 双方资源对照表</div>
+    <h2 class="serif">这是一次对等的品牌合奏,不是单方借光</h2>
+    <div class="gold-rule"></div>
+    <p class="muted">下表逐行列出双方在本项目中的对等投入。每一行麓湖方的投入,均对应一行我方的等量投入。最终联合产出归双方共同所有。</p>
+
+    <div class="duo">
+      <div class="head gold">麓湖方 · LUXELAKES CONTRIBUTES</div>
+      <div class="head">天府中碳 / 姐弟方 · WE CONTRIBUTE</div>
+
+      <div class="row">
+        <div><div class="tag">空间 / VENUE</div>麓湖儿童中心展览空间使用权(单期约 2–3 周),含基础展务支持与儿童艺术空间既有动线。</div>
+        <div><div class="tag">出资 / FUNDING</div>四川天府中碳承担<b>全部</b>项目预算:山区驻扎差旅、师资费用、画材、装裱、押运、保险、布展执行、PR 费用。</div>
+      </div>
+
+      <div class="row">
+        <div><div class="tag">品牌 / BRAND</div>麓湖儿童中心 / A4 美术馆 / 麓湖社区基金会的联合署名授权(以双方协议范围为准)。</div>
+        <div><div class="tag">品牌 / BRAND</div>香港中盈顶耀新能源投资集团 + 香港青年内地就业创业联合会 + 四川天府中碳的联合署名授权。</div>
+      </div>
+
+      <div class="row">
+        <div><div class="tag">渠道 / CHANNEL</div>麓湖既有业主社群、艺术爱好者社群、A4 美术馆观众社群——为义卖端提供高质量公益购藏人群。</div>
+        <div><div class="tag">渠道 / CHANNEL</div>香港 / 海外华人圈、香港青年内地就业创业联合会会员单位、集团 ESG 合作机构——为义卖端提供跨境购藏人群。</div>
+      </div>
+
+      <div class="row">
+        <div><div class="tag">策展 / CURATION</div>A4 美术馆 / 麓湖儿童中心的专业策展与儿童艺术教育顾问支持(以双方对接确认为准)。</div>
+        <div><div class="tag">内容 / CONTENT</div>3–5 人专业美术老师团队 + 双语图录文本 + 现场记录 + RBW Studio 提供的视觉与数字资产。</div>
+      </div>
+
+      <div class="row">
+        <div><div class="tag">合规 / COMPLIANCE</div>麓湖社区基金会作为本地公益合规通道(若适用),为义卖款项发放提供本地公益身份背书。</div>
+        <div><div class="tag">合规 / COMPLIANCE</div>四川天府中碳作为<b>单一兜底主体</b>承担合规、税务、审计、用工与现场安全责任。</div>
+      </div>
+
+      <div class="row">
+        <div><div class="tag">公信 / TRUST</div>麓湖品牌作为「画作落地端」的可信度背书,使义卖闭环可被城市中产与媒体接受。</div>
+        <div><div class="tag">公信 / TRUST</div>集团董事长 + 联合会会长 + 集团碳汇主体三层身份,作为「资金出处端」的可信度背书。</div>
+      </div>
+    </div>
+
+    <div class="card dark" style="margin-top:18px">
+      <h3 class="mt-0" style="color:#F5EFE0">联合产出归双方共同所有</h3>
+      <p>
+        画册版权、纪录短片版权、义卖展览整体 IP、公开传播素材库——
+        <b>采用「联合署名 / 联合传播 / 联合 IP 沉淀」三联合机制</b>,任何一方对外使用均需另一方书面知情同意。
+        三年合作结束后,IP 资产的延伸使用规则由双方另行协议。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= 07 · 资金流向与合规 ============= -->
+  <section id="s07">
+    <div class="kicker"><span class="num">07</span> Fund Flow · 资金流向与合规</div>
+    <h2 class="serif">钱怎么走,谁兜底,谁审计</h2>
+    <div class="gold-rule"></div>
+
+    <h3>资金路径示意</h3>
+    <div class="flow">
+      <div>
+        <div class="step-label">Step 01 · 出资端</div>
+        <div class="step-name">四川天府中碳</div>
+        <div class="step-note">由集团总部核算的项目专项预算,单一来源、单一主体,不对外募款。</div>
+      </div>
+      <div>
+        <div class="step-label">Step 02 · 执行端</div>
+        <div class="step-name">山区驻扎执行</div>
+        <div class="step-note">差旅 / 师资 / 画材 / 装裱 / 押运 / 保险 / 布展 / PR,由天府中碳直付,留存全部凭证。</div>
+      </div>
+      <div>
+        <div class="step-label">Step 03 · 义卖端</div>
+        <div class="step-name">麓湖儿童中心义卖展</div>
+        <div class="step-note">单幅 ¥10–100,购藏款项进入合规公益通道(基金会专户或天府中碳公益专项账户,以双方协议为准)。</div>
+      </div>
+      <div>
+        <div class="step-label">Step 04 · 反哺端</div>
+        <div class="step-name">受益家庭</div>
+        <div class="step-note"><b>义卖款项 100% 反哺</b>对应贫困家庭,以画作-家庭一一对应名册落账,可审计、可追溯。</div>
+      </div>
+    </div>
+
+    <h3>三项硬承诺</h3>
+    <div class="grid-3">
+      <div class="card" style="border-top:3px solid var(--ink)">
+        <h4 class="mt-0">① 100% 反哺</h4>
+        <p class="small">义卖款项不留作运营费、不留作明年预算、不分摊任何成本。运营成本由天府中碳<b>另行全额承担</b>。</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--gold)">
+        <h4 class="mt-0">② 可审计</h4>
+        <p class="small">每一期项目结束后 60 日内,出具<b>第三方可审计的资金流向报告</b>,抄送麓湖方品牌 / CSR 对接人。</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--jade)">
+        <h4 class="mt-0">③ 可追溯</h4>
+        <p class="small">每幅画 → 每户家庭 → 每笔款项,三者一一对应、可逐笔回溯,允许麓湖方在合规边界内随时抽查。</p>
+      </div>
+    </div>
+
+    <h3>合规身份三层叠加</h3>
+    <table>
+      <thead><tr><th>层级</th><th>主体</th><th>合规角色</th></tr></thead>
+      <tbody>
+        <tr><td>集团层</td><td>香港中盈顶耀新能源投资集团</td><td>资金最终来源 / 跨境财务合规背书</td></tr>
+        <tr><td>公益层</td><td>香港青年内地就业创业联合会(2019 年于中联办指导下成立)</td><td>非营利履历背书 / 公益经验背书</td></tr>
+        <tr><td>执行层</td><td>四川天府中碳环保科技有限公司</td><td>境内出资 / 境内执行 / 境内审计 / 境内兜底单一主体</td></tr>
+      </tbody>
+    </table>
+    <p class="small muted">麓湖方在签署合作协议时,<b>仅与四川天府中碳一方对接合同</b>,无须就集团或联合会身份承担任何审查义务,但可作为信用佐证留档。</p>
+  </section>
+
+  <!-- ============= 08 · 风险对沖与撤出 ============= -->
+  <section id="s08">
+    <div class="kicker"><span class="num">08</span> Risk &amp; Exit · 风险对沖与撤出条款</div>
+    <h2 class="serif">六项风险 · 四项撤出条款</h2>
+    <div class="gold-rule"></div>
+    <p class="muted">本节是本方案对麓湖决策方的核心承诺。我们承认任何长期公益合作都可能产生不可控变量,因此<b>预先把麓湖方的退路写得与进路一样清晰</b>。</p>
+
+    <div class="risk">
+      <div class="risk-card">
+        <div class="label">风险 01 · 受众反应</div>
+        <h4>义卖现场遇冷 / 价格争议</h4>
+        <p>对沖:由天府中碳预先承诺<b>义卖兜底购藏</b>——若公开义卖未售罄,余下作品由天府中碳按定价全部购藏,保证每户家庭收益不打折。</p>
+      </div>
+      <div class="risk-card">
+        <div class="label">风险 02 · 媒体失控</div>
+        <h4>媒体二次传播偏离主线</h4>
+        <p>对沖:专业 PR 统一口径 + 媒体准入名单制 + 双方品牌新闻发布前互审机制(详见第 11 章)。</p>
+      </div>
+      <div class="risk-card">
+        <div class="label">风险 03 · 现场安全</div>
+        <h4>山区驻扎期间人身 / 财产安全</h4>
+        <p>对沖:全员公众责任险 + 当地教育主管部门报备 + 与当地学校 / 村委正式协议 + 应急医疗联系人预案。</p>
+      </div>
+      <div class="risk-card">
+        <div class="label">风险 04 · 善款流向疑虑</div>
+        <h4>外界对款项去向产生质疑</h4>
+        <p>对沖:第三方可审计报告 + 画作-家庭一一对应名册 + 必要时邀请麓湖社区基金会派员现场抽查。</p>
+      </div>
+      <div class="risk-card">
+        <div class="label">风险 05 · 合规审查</div>
+        <h4>地方监管 / 教育 / 民政部门审查</h4>
+        <p>对沖:由四川天府中碳法务统一对接,所有审查发函直达天府中碳;<b>麓湖方不出现在任何一线合规对接接口上</b>。</p>
+      </div>
+      <div class="risk-card">
+        <div class="label">风险 06 · 项目搁浅</div>
+        <h4>不可抗力导致某一期无法执行</h4>
+        <p>对沖:每期项目预设 6 个月前置筹备窗口;若不可抗力发生,自动顺延至下一窗口,且双方在 30 日内联合发布说明。</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <h3 class="mt-0">麓湖品牌撤出条款 · 四项</h3>
+      <p class="muted small">本条款为本方案最关键、对决策方最具诚意的部分。</p>
+      <table>
+        <thead><tr><th style="width:34%">条款</th><th>具体说明</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>① 撤出条件</b></td>
+            <td>当且仅当出现下列情形之一:重大合规事件、重大媒体负面、重大安全事故、双方书面认定的品牌价值减损——麓湖方有权<b>单方启动撤出</b>。</td>
+          </tr>
+          <tr>
+            <td><b>② 撤出程序</b></td>
+            <td>由麓湖方品牌 / CSR 对接人发出书面撤出通知;48 小时内,天府中碳完成<b>所有公开材料中麓湖品牌元素的下架与替换</b>;7 日内联合发布对外说明。</td>
+          </tr>
+          <tr>
+            <td><b>③ 主导权</b></td>
+            <td>撤出后对外口径由<b>麓湖方主导确认</b>,天府中碳承诺不单方发布与撤出有关的说明、暗示或解释。</td>
+          </tr>
+          <tr>
+            <td><b>④ 善后责任</b></td>
+            <td>撤出后,项目可由天府中碳独立继续运营,但<b>不得继续使用任何与麓湖相关的品牌、空间、人员形象</b>。已产生的对受益家庭的承诺由天府中碳全额履约,与麓湖方无关。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small mb-0"><b>核心原则:</b>麓湖方进入本项目时拥有的品牌主导权,在退出时<b>同等保留</b>。</p>
+    </div>
+  </section>
+
+  <!-- ============= 09 · 三年六期路线图 ============= -->
+  <section id="s09">
+    <div class="kicker"><span class="num">09</span> 3-Yr Roadmap · 三年六期滚动路线图</div>
+    <h2 class="serif">从首期落地到 IP 沉淀</h2>
+    <div class="gold-rule"></div>
+
+    <div class="tl">
+      <div class="tl-row">
+        <div class="tl-date">2026.07<small>WAVE 01 · 首期</small></div>
+        <div class="tl-body">
+          <h4>四川山区暑期场 · 麓湖儿童中心首展</h4>
+          <p>30–50 名儿童 · 120–250 幅画作 · 麓湖儿童中心首次联合署名公益义卖展。</p>
+          <p class="muted small">媒体节点:首次联合发布会 / 首批文化与生活方式媒体专题 / 首支现场短片。IP 沉淀:首卷《童年的回信》图录(中英双语)立项。</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2027.01<small>WAVE 02 · 寒假场</small></div>
+        <div class="tl-body">
+          <h4>四川山区寒假场 · 春节档义卖展</h4>
+          <p>承接首期,验证「7 月暑期 + 1 月寒假」双窗口节奏的可持续性。</p>
+          <p class="muted small">媒体节点:春节档城市文化议题 / 首支纪录短片(年度)首映。IP 沉淀:首卷图录上市。</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2027.07<small>WAVE 03</small></div>
+        <div class="tl-body">
+          <h4>项目第二年暑期场 · IP 第一次外溢</h4>
+          <p>引入 1 位外部艺术家 / 教育者作为客座导师,为 IP 注入新视角。</p>
+          <p class="muted small">媒体节点:首次进入国际中文媒体视野。IP 沉淀:衍生青少年读本(与 RBW Studio 联动)立项。</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2028.01<small>WAVE 04</small></div>
+        <div class="tl-body">
+          <h4>项目第二年寒假场 · 双年回顾展</h4>
+          <p>在麓湖儿童中心 / A4 美术馆联合空间举办「两年四期」阶段性回顾展。</p>
+          <p class="muted small">媒体节点:艺术与公共文化类媒体年度盘点。IP 沉淀:第二卷图录立项 / 衍生读本上市。</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2028.07<small>WAVE 05</small></div>
+        <div class="tl-body">
+          <h4>项目第三年暑期场 · 国际化窗口</h4>
+          <p>双语图录与纪录短片向海外华人圈与艺术机构投递,探索海外巡展可能性。</p>
+          <p class="muted small">媒体节点:海外中文媒体与艺术专业刊物。IP 沉淀:海外巡展可行性报告。</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">2029.01<small>WAVE 06 · 三年节点</small></div>
+        <div class="tl-body">
+          <h4>三年节点 · 联合 IP 总结展</h4>
+          <p>720–1,500 幅画作的总归档 + 三卷图录 + 三支纪录短片 + 衍生读本系列总成。</p>
+          <p class="muted small">媒体节点:财经 / 文化 / 生活方式 / 国际中文四级媒体梯度同步发声。IP 沉淀:双方共同决议 IP 是否进入第二个三年。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= 10 · 长期 IP 联名资产 ============= -->
+  <section id="s10">
+    <div class="kicker"><span class="num">10</span> Co-owned IP · 长期 IP 联名资产</div>
+    <h2 class="serif">三年后留下的不是活动记忆,是可被引用的 IP</h2>
+    <div class="gold-rule"></div>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="badge ink">资产 ①</span>
+        <h3 class="mt-0">联合署名画册</h3>
+        <p>中英双语,每年一卷,共三卷。署名顺序:<br/><b>麓湖儿童中心 · 四川天府中碳环保科技有限公司 · B.W &amp; R.W</b>(以最终协议为准)。</p>
+        <p class="small muted">用途:艺术机构馈赠、媒体送审、海外华人圈派发、麓湖品牌资产库归档。</p>
+      </div>
+      <div class="card">
+        <span class="badge">资产 ②</span>
+        <h3 class="mt-0">纪录短片(年度)</h3>
+        <p>每年一支,15–25 分钟,由专业团队拍摄。<br/>联合出品:<b>麓湖 · 天府中碳 · RBW Studio</b>。</p>
+        <p class="small muted">用途:首映可放在麓湖儿童中心 / A4 美术馆;后续投递文化类纪录片节展与海外华人电影节。</p>
+      </div>
+      <div class="card">
+        <span class="badge jade">资产 ③</span>
+        <h3 class="mt-0">衍生青少年读本</h3>
+        <p>由 RBW Studio 与项目共同开发,围绕画作背后的孩子、土地、童年叙事,做面向城市青少年的阅读产品。</p>
+        <p class="small muted">用途:进入麓湖儿童中心既有教育产品线;为合作三年后的 IP 延展提供商业化备选路径(全部利润仍按双方约定的公益方向使用)。</p>
+      </div>
+    </div>
+
+    <div class="pull">
+      三年之后,《童年的回信》不应只是一段被人念旧的活动,而是一份可被国内外艺术圈、文化媒体、教育机构反复引用的<b>儿童艺术公益 IP</b>。<br/>
+      麓湖儿童中心是这个 IP 的<b>共同署名人</b>,不是赞助方。
+    </div>
+  </section>
+
+  <!-- ============= 11 · 媒体口径 ============= -->
+  <section id="s11">
+    <div class="kicker"><span class="num">11</span> PR Protocol · 媒体与传播口径</div>
+    <h2 class="serif">专业 PR 统一口径,品牌共有,边界清晰</h2>
+    <div class="gold-rule"></div>
+
+    <h3>三项基本原则</h3>
+    <ul class="tight">
+      <li><b>统一口径:</b>所有对外发声,由专业 PR 团队按双方共同确认的口径统一处理。任何一方不得单独以本项目名义发布未经互审的内容。</li>
+      <li><b>双方互审:</b>新闻稿、专访、视频物料,在发布前 72 小时由双方品牌 / CSR 对接人各自留出审阅窗口。</li>
+      <li><b>儿童保护优先:</b>受益儿童面部、姓名、家庭信息严格按《未成年人保护法》及行业惯例处理,任何画面级使用均需当地监护人书面同意。</li>
+    </ul>
+
+    <h3>双方品牌露出比例预案</h3>
+    <table>
+      <thead><tr><th>场景</th><th>麓湖方露出</th><th>我方露出</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>义卖展现场视觉</td><td>50%</td><td>50%</td><td>双 logo 等高等大,联合署名</td></tr>
+        <tr><td>新闻稿主标题 / 副标题</td><td>主标题</td><td>副标题</td><td>主推「麓湖儿童中心 × 童年的回信」叙事</td></tr>
+        <tr><td>纪录短片片头署名</td><td>50%</td><td>50%</td><td>三方联合出品(麓湖 / 天府中碳 / RBW Studio)</td></tr>
+        <tr><td>画册封面署名</td><td>50%</td><td>50%</td><td>署名顺序由双方协议确认</td></tr>
+        <tr><td>海外华人媒体专题</td><td>40%</td><td>60%</td><td>海外端由我方主导,但麓湖品牌作为「中国高品质开发方」案例呈现</td></tr>
+      </tbody>
+    </table>
+
+    <h3>媒体级别梯度(建议)</h3>
+    <div class="grid-4">
+      <div class="card"><h4 class="mt-0">财经 / 商业</h4><p class="small muted">围绕「企业 ESG / CSR 长期主义」叙事,呈现万华集团 + 香港中盈顶耀的合作样本。</p></div>
+      <div class="card"><h4 class="mt-0">文化 / 艺术</h4><p class="small muted">围绕儿童艺术、当代艺术与公共文化空间叙事,以 A4 美术馆生态为背景。</p></div>
+      <div class="card"><h4 class="mt-0">生活方式</h4><p class="small muted">围绕成都 / 麓湖城市文化叙事,落到「在麓湖,接住一封从山里来的信」。</p></div>
+      <div class="card"><h4 class="mt-0">国际中文媒体</h4><p class="small muted">面向香港 / 北美华人圈,讲述跨境家族半径与中国本土公益的双向叙事。</p></div>
+    </div>
+
+    <h3>姐弟首次公开露面的窗口与边界</h3>
+    <p>
+      B.W 以「项目负责人 / 集团董事长 / 联合会会长」身份接受财经与文化类深度专访,可署真名。<br/>
+      R.W 以「项目共同发起人 / B.W 的弟弟 / R.W」身份出现,<b>不使用真名,不接受面部特写,不参与商业代言</b>。
+      其首次公开露面建议放在 2026 年 7 月首期落地后的联合发布会,且不安排独立专访。
+    </p>
+  </section>
+
+  <!-- ============= 12 · 决策提示 ============= -->
+  <section id="s12">
+    <div class="kicker"><span class="num">12</span> Next Step · 决策提示与下一步</div>
+    <h2 class="serif">把方案推进到签字桌上,需要双方共同决策的事项</h2>
+    <div class="gold-rule"></div>
+
+    <h3>启动条件</h3>
+    <ul class="tight">
+      <li>麓湖方品牌 / CSR 对接人书面确认本方案进入正式洽谈阶段;</li>
+      <li>双方在 2026 年 6 月底前完成首次正式对接会议;</li>
+      <li>双方在 2026 年 6 月底前完成对首期(2026 年 7 月)关键事项的共同决策。</li>
+    </ul>
+
+    <h3>建议:首次对接会议议程(60 分钟)</h3>
+    <ol class="steps">
+      <li>本方案书的逐章问询(10 分钟)——以麓湖方提问为主。</li>
+      <li>第 04 章「机构信用页」+ 第 07 章「资金流向」专项答疑(15 分钟)。</li>
+      <li>第 06 章「双方资源对照表」逐行对齐(15 分钟)——这是协议核心。</li>
+      <li>第 08 章「撤出条款」逐条确认(10 分钟)。</li>
+      <li>三项 6 月内须共同决策事项的初步对齐(10 分钟,见下表)。</li>
+    </ol>
+
+    <h3>6 月内须双方共同决策的三项事宜</h3>
+    <table>
+      <thead><tr><th style="width:24%">事项</th><th>说明</th><th style="width:18%">建议决策时点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>① 联合署名结构</b></td>
+          <td>麓湖方参与署名的具体主体(麓湖儿童中心 / A4 美术馆 / 麓湖社区基金会的组合方式)与署名顺序。</td>
+          <td>2026 年 6 月中</td>
+        </tr>
+        <tr>
+          <td><b>② 资金通道</b></td>
+          <td>义卖款项的合规通道选择:走麓湖社区基金会专户、还是走天府中碳公益专项账户、还是双轨并行。</td>
+          <td>2026 年 6 月中</td>
+        </tr>
+        <tr>
+          <td><b>③ 首期场地</b></td>
+          <td>2026 年 7 月首期义卖展的具体场地确认:麓湖儿童中心独立空间 / A4 美术馆联合空间 / 二者共展。</td>
+          <td>2026 年 6 月底</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="decision">
+      <p class="serif" style="font-size:19px;margin:0;color:#3a2e0e;line-height:1.7">
+        本项目不是麓湖儿童中心年度活动列表中的一项,而是麓湖儿童中心未来三年可被国内外引用的<b>一件长期作品</b>。
+        我们提供资金、师资、内容、合规与全部兜底;麓湖提供的是它已经拥有的——专业、品牌与一个可以郑重接住孩子的房间。<br/>
+        <span class="muted serif" style="font-size:14.5px;font-style:italic">We bring the funding, the talent, the content, the compliance and the full risk cover. Luxelakes brings what it already has — the craft, the brand, and a room worthy of a child's first letter home.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= 签署页 ============= -->
+  <section id="sig">
+    <div class="kicker"><span class="num">附</span> Signature · 签署页 / 联系方式</div>
+    <h2 class="serif">本方案书签署页</h2>
+    <div class="gold-rule"></div>
+
+    <div class="grid-2">
+      <div class="sig">
+        <h3 class="mt-0">提交方</h3>
+        <p><b>第一签字方:</b>B.W &nbsp;<span class="muted small">项目负责人</span><br/>
+           <span class="muted small">香港中盈顶耀新能源投资集团 · 董事长<br/>
+           香港青年内地就业创业联合会 · 会长</span></p>
+        <p><b>第二签字方:</b>R.W &nbsp;<span class="muted small">项目共同发起人</span></p>
+        <p><b>出资 / 执行 / 兜底主体:</b><br/>四川天府中碳环保科技有限公司</p>
+        <div class="rule"></div>
+        <p class="small muted">联系方式 · 由 B.W 办公室统一对接<br/>RBW Studio · rbwmeta.com</p>
+      </div>
+      <div class="sig gold">
+        <h3 class="mt-0">接收方(待签)</h3>
+        <p><b>主体:</b>成都麓湖生态城开发方<br/><span class="muted small">万华投资集团 / 麓湖儿童中心 / A4 美术馆 / 麓湖社区基金会</span></p>
+        <p><b>对接人:</b><span class="muted">________________________</span></p>
+        <p><b>职务:</b><span class="muted">________________________</span></p>
+        <p><b>签署日期:</b><span class="muted">2026 年 ___ 月 ___ 日</span></p>
+        <div class="rule"></div>
+        <p class="small muted">本方案书为合作意向文件,正式合作以双方另行签署的合作协议为准。</p>
+      </div>
+    </div>
+
+    <p class="small muted center" style="margin-top:32px">
+      文件版本:v1.0 · 提交时间:2026 年 5 月 · 文件编号(待定):LHCC-LH-2026-001<br/>
+      本方案书内容为提交方提议,非最终协议;所有数字、时点与执行细节以双方书面协议为准。
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="row">
+    <div>
+      <h4>《童年的回信》Letters Home from Childhood</h4>
+      <p>山区儿童艺术公益 × 麓湖儿童中心义卖联合项目方案书</p>
+      <p>提交方:B.W &amp; R.W &nbsp;|&nbsp; 出资 / 执行 / 兜底主体:四川天府中碳环保科技有限公司</p>
+      <p style="margin-top:12px;color:#8a8060;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase">CO-BRANDED · LONG-TERM · AUDITABLE · 2026–2029</p>
+    </div>
+    <div>
+      <h4>关键原则</h4>
+      <p>· 100% 反哺受益家庭</p>
+      <p>· 单一兜底主体</p>
+      <p>· 双方互审 · 联合署名</p>
+      <p>· 麓湖品牌随时可撤出</p>
+    </div>
+  </div>
+</footer>
+
+<div class="ribbon"></div>
+</body>
+</html>
